@@ -29,8 +29,8 @@ ansible-playbook -i localhost, monitoring.yml --ask-become-pass
 
 ## 1. Ansible Playbook Execution
 
-![Ansible playbook execution] (screenshots/ansible%20ss.jpg)
+![Ansible playbook execution](screenshots/ansible%20ss.jpg)
 
 ## 2. Prometheus Monitoring Status
 
-![Prometheus monitoring status] (screenshots/prometheus%20status.jpg)
+![Prometheus monitoring status](screenshots/prometheus%20status.jpg)
