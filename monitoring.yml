@@ -1,0 +1,28 @@
+---
+- name: Check server monitoring services
+  hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: Ensure Nginx is running
+      ansible.builtin.service:
+        name: nginx
+        state: started
+
+    - name: Ensure Prometheus is running
+      ansible.builtin.service:
+        name: prometheus
+        state: started
+
+    - name: Check Nginx response
+      ansible.builtin.uri:
+        url: http://localhost
+        status_code: 200
+      become: false
+
+    - name: Check Prometheus health
+      ansible.builtin.uri:
+        url: http://localhost:9090/-/healthy
+        return_content: true
+      become: false
